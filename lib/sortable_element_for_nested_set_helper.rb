@@ -10,7 +10,7 @@ module SortableElementForNestedSetHelper
     end
     
     def with_value
-      "'#{@param_name}='+ $(#{@element_id.to_json}).moved_element + '&' + Sortable.serialize(#{@element_id.to_json})"
+      "'#{@param_name}='+ $(#{@element_id.to_json}).moved_element.split('_').last() + '&' + Sortable.serialize(#{@element_id.to_json})"
     end
     
     def on_change_value 
