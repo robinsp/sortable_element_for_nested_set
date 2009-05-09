@@ -1,13 +1,23 @@
-SortableElementForNestedSet
-===========================
+= SortableElementForNestedSet
 
-Introduction goes here.
+Sorting a tree using the script.aculo.us helper that comes with Rails is nice.
+But if your tree is backed by a nested set, the default request parameter sent to 
+your controllers might not really fit your needs. 
+
+This plugin allows you to easily find out which html element was moved (dragged) and
+between which two elements it ended up. 
+
+Your work will be to make the update to your nested set model.
+
+=== Usage
+TODO
+
+=== Install
+TODO
+
+==== Test
+TODO
 
 
-Example
-=======
 
-Example goes here.
-
-
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Copyright (c) 2009 RobinSpainhour.com, released under the MIT license
