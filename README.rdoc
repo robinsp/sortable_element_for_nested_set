@@ -29,7 +29,7 @@ To get the new position of a moved element use the these methods in a similar wa
 to this example controller:
 
 
-	class MyController \< ApplicationController
+	class MyController < ApplicationController
 	  handles_sorting_of_nested_set
 	  
 	  def move
