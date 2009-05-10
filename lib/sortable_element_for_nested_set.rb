@@ -3,12 +3,13 @@ require "tree_calc"
 # SortableElementForNestedSet
 module SortableElementForNestedSet
   def self.included(base)
-    base.extend(ClassMethods)              
+    base.extend(ClassMethods)
   end
   
   module ClassMethods 
     def handles_sorting_of_nested_set
       include SortableElementForNestedSet::InstanceMethods
+      attr_reader :dragged_record_id
     end
   end
   
@@ -22,7 +23,7 @@ module SortableElementForNestedSet
     
     def in_tree(tree_param_name)
       calculator = TreeMoveCalculator.new( params[tree_param_name] )
-      calculator.placement_of(@dragged_record_id)
+      calculator.placement_of(self.dragged_record_id)
     end
   end
   
