@@ -29,7 +29,7 @@ describe SortableElementForNestedSetHelper do
     end
     
     it "should create javascript for 'with' attribute" do 
-      @generator.with_value.should ==  
+      @generator.with_value.should == 
       "'#{@param_name}='+ $(#{@element_id.to_json}).moved_element.split('_').last() + '&' + Sortable.serialize(#{@element_id.to_json})"
     end
     
