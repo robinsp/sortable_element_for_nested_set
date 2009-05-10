@@ -1,0 +1,59 @@
+= SortableElementForNestedSet
+
+Sorting a tree using the script.aculo.us helper that comes with Rails is nice.
+But if your tree is backed by a nested set, the default request parameter sent to 
+your controllers might not really fit your needs. 
+
+This plugin allows you to easily find out which html element was moved (dragged) and
+between which two elements it ended up. 
+
+Your work will be to make the update to your nested set model.
+
+=== Usage
+The plugin has two parts. One view helper method and one controller module.
+
+Assuming you have a tree where the node elements are named using the dom_id helper method,
+in your view, use the sortable_element_reporting_target helper pretty much as your would 
+use the sortable_element helper that comes with Rails.
+There is however a second argument that sets the parameter name of where the (record) id of 
+the element that was moved will be available.
+The third (optional) options argument is the same as for sortable_element, except that 
+<tt>:onChange</tt> and <tt>:with</tt> are not allowed. 
+
+<tt>
+<%= sortable_element_reporting_target("tree_element", "moved_element_id") %>
+</tt>
+
+In your controller, include the util methods with <tt>handles_sorting_of_nested_set</tt>.
+To get the new position of a moved element use the these methods in a similar way 
+to this example controller:
+
+
+	class MyController \< ApplicationController
+	  handles_sorting_of_nested_set
+	  
+	  def move
+	    new_position = position_of(:moved_element_id).in_tree(:tree_element)
+	  end
+	end
+	
+
+The new_position variable will be a hash with information about the moved elements new position.
+The keys in the hash (<tt>:parent, :move_to_right_of, :move_to_left_of</tt>) all point to active 
+record id:s. It up to you to move your model accordingly.
+
+
+=== Install
+
+<tt>./script/plugin install git://github.com/robinsp/sortable_element_for_nested_set.git</tt>
+
+==== Test
+(This requires rspec-rails (and thus rspec) and mocha to be available on your system.)
+
+Run the plugin specs with: 
+
+<tt>rake spec:plugins PLUGIN=sortable_element_for_nested_set</tt>
+
+
+
+Copyright (c) 2009 RobinSpainhour.com, released under the MIT license
