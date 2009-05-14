@@ -6,7 +6,7 @@ Echoe.new('sortable_element_for_nested_set', '0.1.0') do |p|
   p.description    = "Rails plugin for using script.aculo.us sortable_element for trees backed by nested sets."
   p.url            = "http://github.com/robinsp/sortable_element_for_nested_set"
   p.author         = "Robin Spainhour"
-  #p.email          = "robin@robinspainhour.com"
+  p.email          = "robin@robinspainhour.com"
   p.ignore_pattern = ["tmp/*"]
   p.development_dependencies = []
 end
