@@ -2,7 +2,7 @@ require 'rake'
 require 'spec/rake/spectask'
 require 'echoe'
 
-Echoe.new('uniquify', '0.1.0') do |p|
+Echoe.new('sortable_element_for_nested_set', '0.1.0') do |p|
   p.description    = "Rails plugin for using script.aculo.us sortable_element for trees backed by nested sets."
   p.url            = "http://github.com/robinsp/sortable_element_for_nested_set"
   p.author         = "Robin Spainhour"
