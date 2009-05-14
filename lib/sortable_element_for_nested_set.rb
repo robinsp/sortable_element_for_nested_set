@@ -1,4 +1,5 @@
-require "tree_calc"
+require File.expand_path(File.dirname(__FILE__) + "/tree_calc")
+require File.expand_path(File.dirname(__FILE__) + "/sortable_element_for_nested_set_helper")
 
 # SortableElementForNestedSet
 module SortableElementForNestedSet
@@ -28,3 +29,5 @@ module SortableElementForNestedSet
   end
   
 end
+
+ActionController::Base.send( :include, SortableElementForNestedSet)

@@ -5,6 +5,7 @@ class SortableElementForNestedSet::SortingController < ActionController::Base
   
   def move
     # This action is defined to let the specs set up the state of the controller easily
+    render :nothing => true
   end
 end
 

@@ -32,3 +32,5 @@ module SortableElementForNestedSetHelper
     sortable_element(element_id, options.merge(opts_gen.opts))
   end
 end
+
+ActionView::Base.send(:include, SortableElementForNestedSetHelper)
