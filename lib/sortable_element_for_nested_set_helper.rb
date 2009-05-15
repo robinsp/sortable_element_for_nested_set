@@ -23,13 +23,18 @@ module SortableElementForNestedSetHelper
   end
 
   def sortable_element_reporting_target(element_id, target_param_name, options = {}) 
+    javascript_tag(sortable_element_reporting_target_js(element_id, target_param_name, options) )
+  end
+  
+  def sortable_element_reporting_target_js(element_id, target_param_name, options = {}) 
     raise "target_param_name is required" if target_param_name.blank?
     
     [:onChange, :with].each do |key|
       raise "#{key} is set by this helper and is not allowed" if options.has_key? key  
     end
     opts_gen = OptsGenerator.new(element_id, target_param_name)
-    sortable_element(element_id, options.merge(opts_gen.opts))
+    
+    sortable_element_js(element_id, options.merge(opts_gen.opts))
   end
 end
 
