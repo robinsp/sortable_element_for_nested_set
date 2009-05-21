@@ -45,14 +45,23 @@ record id:s. It up to you to move your model accordingly.
 
 === Install
 
+==== As gem
+
+Add the following to config/environment.rb
+
+	config.gem "robinsp-sortable_element_for_nested_set",
+	           :lib    => "sortable_element_for_nested_set",
+	           :source => "http://gems.github.com"
+
+Then run 
+
+<tt>sudo rake gems:install</tt>
+
+==== As plugin
+
 <tt>./script/plugin install git://github.com/robinsp/sortable_element_for_nested_set.git</tt>
 
-==== Test
-(This requires rspec-rails (and thus rspec) and mocha to be available on your system.)
 
-Run the plugin specs with: 
-
-<tt>rake spec:plugins PLUGIN=sortable_element_for_nested_set</tt>
 
 
 
