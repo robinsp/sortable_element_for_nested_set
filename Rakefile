@@ -8,7 +8,6 @@ Echoe.new('sortable_element_for_nested_set', '0.1.2') do |p|
   p.author         = "Robin Spainhour"
   p.email          = "robin@robinspainhour.com"
   p.ignore_pattern = ["tmp/*"]
-  p.dependencies = ["rails >= 2.2.2"]
   p.development_dependencies = ["rspec >= 1.2.4", 
                                 "rspec-rails >= 1.2.4",
                                 "mocha >= 0.9.5"]
