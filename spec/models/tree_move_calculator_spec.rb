@@ -72,4 +72,20 @@ describe SortableElementForNestedSet::TreeMoveCalculator do
     
     result.last.id.should == 700
   end
+  
+  describe "to_hash()" do 
+    it "should return empty hash if array is empty" do 
+        @class_under_test.to_hash([]).should == {}
+    end
+    
+    it "should convert flat array to hash" do 
+      array = ["3", "2", "1"]
+      expected_hash = { "0" => {"id" => "3"}, 
+                        "1" => {"id" => "2"}, 
+                        "2" => {"id" => "1"} 
+                      }
+      
+      @class_under_test.to_hash(array).should == expected_hash
+    end
+  end
 end
