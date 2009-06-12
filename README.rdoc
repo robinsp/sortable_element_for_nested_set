@@ -42,6 +42,9 @@ The new_position variable will be a hash with information about the moved elemen
 The keys in the hash (<tt>:parent, :move_to_right_of, :move_to_left_of</tt>) all point to active 
 record id:s. It up to you to move your model accordingly.
 
+For a more complete sample, the relevant parts of a simple rails application can be found 
+in this gist[http://gist.github.com/128779].
+
 
 === Install
 
